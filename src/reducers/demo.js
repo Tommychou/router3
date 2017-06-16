@@ -1,18 +1,28 @@
 import 'whatwg-fetch';
 
+import Immutable from 'immutable';
+
 const INIT = 'demoINIT';
 const FAIL = 'demoFAIL';
 const SUCC = 'demoSUCC';
 
 
-const initialState = {
-  demo : []
-};
+// const initialState = {
+//   demo : []
+// };
 
+const initialState = Immutable.fromJS({
+    demo: []
+});
+
+console.log(initialState,1111)
 export default function demo(state = initialState, action = {type: INIT}) {
   switch (action.type) {
     case SUCC:
-      return {demo:action.data}
+      // return {demo:action.data.data}
+      return state.merge({
+            demo:action.data.data
+        });
     default:
       return state;
   }
@@ -31,7 +41,7 @@ const ajaxSuccess = (info) => {
 
 export function fetchData(){
   return async (dispatch,getState) =>{
-    const rsp = await fetch('https://socket-center.class100.com/servlist');
+    const rsp = await fetch('https://cnodejs.org/api/v1/topics');
 
     const data = await rsp.json();
 
