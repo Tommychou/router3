@@ -1,6 +1,6 @@
 import React, { Component } from 'react';
 import { BrowserRouter as Router , Route , Switch , Redirect , Link , withRouter } from 'react-router-dom';
-import logo from './logo.svg';
+// import logo from './logo.svg';
 import './App.css';
 import Demo from './components/demo'
 import 'whatwg-fetch';
@@ -37,7 +37,7 @@ class Top extends Component {
     return (
       <div className="App">
         <div className="App-header">
-          <img src={logo} className="App-logo" alt="logo" />
+          <div>导航</div>
         </div>
       </div>
     );

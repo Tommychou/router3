@@ -3,7 +3,9 @@ import { connect } from 'react-redux' // 引入connect
 import { bindActionCreators } from 'redux'
 import * as TodoActions from '../../reducers/demo'
 import { BrowserRouter as Router , Route , Switch , Redirect , Link } from 'react-router-dom';
-import { Button } from 'antd-mobile/lib/button';
+import { Button , Icon , Grid } from 'antd-mobile'
+
+
 
 
 class Nav extends Component {
@@ -43,7 +45,9 @@ class Demo extends Component {
             <div>
                 <Nav/>
                 {console.log(this.props)}
-                <Button>按钮</Button>
+                <Button className="btn" type="primary">primary button</Button>
+                <Icon type="down" />
+                <a href = "/1.zip">12313</a>
             </div>
         )
     }
