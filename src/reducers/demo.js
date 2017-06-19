@@ -15,7 +15,7 @@ const initialState = Immutable.fromJS({
     demo: []
 });
 
-console.log(initialState,1111)
+
 export default function demo(state = initialState, action = {type: INIT}) {
   switch (action.type) {
     case SUCC:

@@ -3,6 +3,7 @@ import { connect } from 'react-redux' // 引入connect
 import { bindActionCreators } from 'redux'
 import * as TodoActions from '../../reducers/demo'
 import { BrowserRouter as Router , Route , Switch , Redirect , Link } from 'react-router-dom';
+import { Button } from 'antd-mobile/lib/button';
 
 
 class Nav extends Component {
@@ -42,6 +43,7 @@ class Demo extends Component {
             <div>
                 <Nav/>
                 {console.log(this.props)}
+                <Button>按钮</Button>
             </div>
         )
     }
@@ -49,7 +51,7 @@ class Demo extends Component {
 // 获取state中的list值
 const getData = state => {
     return {
-        list: state.demo.demo
+        list: state.get('demo').get('demo').toJS()
     }
 }
 const getMethod = dispatch => {
